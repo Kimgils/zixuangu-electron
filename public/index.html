@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <link rel="icon shortcut" type="image/x-icon" href="/favicon.ico">
+
+    <title>股市提示</title>
+
+    
+
+    <!-- Bootstrap Core CSS -->
+    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="js/plugin/jquery-ui/jquery-ui.min.css" rel="stylesheet">
+    <link href="bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+
+
+    <!-- Custom CSS -->
+    <link href="css/simple-sidebar.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script type="text/javascript" src="bower_components/jquery/dist/jquery.js"></script>
+    <script>
+        // Fix jQuery in Atom Shell
+        try {
+            $ = jQuery = module.exports;
+        } catch(e) {}
+    </script>
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- jQuery -->
+    <!-- <script src="bower_components/jquery/dist/jquery.js"></script> -->
+
+    <!-- Bootstrap Core JavaScript -->
+    <!-- <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script> -->
+
+    <!-- Menu Toggle Script -->
+    <script type="text/javascript" src="js/plugin/jquery-ui/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="js/plugin/doT/doT.js"></script>
+    <script type="text/javascript" src="bower_components/requirejs/require.js"></script>
+    <script type="text/javascript">
+        nodereq = require;
+        requirejs.config({
+            baseUrl: 'bower_components',
+            paths: {
+                config: '../js/config',
+                templates: '../templates',
+                style:'../css',
+                view: '../js/view',
+                model: '../js/model',
+                util: '../js/util',
+                collection: '../js/collection',
+
+                jquery: 'jquery/dist/jquery',
+                bootstrap: 'bootstrap/dist/js/bootstrap',
+                backbone: 'backbone/backbone',
+                underscore: 'underscore/underscore',
+                store: 'store.js/store',
+                swfobject: 'swfobject/swfobject/swfobject',
+                notify: 'html5-desktop-notifications/desktop-notify-min',
+
+                layoutmanager: '../js/plugin/backbone.layoutmanager',
+                jqueryUI: '../js/plugin/jquery-ui/jquery-ui.min',
+                text: '../js/plugin/requirejs-text/text',
+                doT: '../js/plugin/doT/doT.min'
+            },
+            shim: {
+                jquery: {
+                    exports: ['$', 'jQuery', 'jquery']
+                },
+                jqueryUI: {
+                    deps: ['jquery']
+                },
+                bootstrap: {
+                    deps: ['jquery']
+                },
+                backbone: {
+                    deps: ['jquery', 'underscore'],
+                    exports: ['Backbone']
+                },
+                layoutmanager: {
+                    deps: ['backbone', 'underscore', 'jquery']
+                },
+                underscore: {
+                    exports: ['_']
+                }
+            },
+            deps: ["../js/app"]
+        });
+    </script>
+</body>
+
+</html>
